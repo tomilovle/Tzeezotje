@@ -1,13 +1,3 @@
-// const gulp        = require('gulp');
-// const browserSync = require('browser-sync');
-// const sass = require('gulp-sass')(require('sass'));
-// const rename = require("gulp-rename");
-// const autoprefixer = require('gulp-autoprefixer');
-// const cleanCSS = require('gulp-clean-css');
-// const htmlmin = require('gulp-htmlmin');
-
-
-
 
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
@@ -24,7 +14,7 @@ import imagemin from 'gulp-imagemin';
 gulp.task('server', function() {
     browserSync.init({
         server: {
-            baseDir: "dist"
+            baseDir: "src"
         }
     });
 
@@ -40,7 +30,7 @@ gulp.task('styles', function() {
              }))
             .pipe(autoprefixer())
             .pipe(cleanCSS({compatibility: 'ie8'}))
-            .pipe(gulp.dest("dist/css"))
+            .pipe(gulp.dest("src/css"))
             .pipe(browserSync.stream());
 });
 
@@ -70,10 +60,6 @@ gulp.task('icons', function() {
         .pipe(gulp.dest('dist/icons'));
 });
 
-gulp.task('mailer', function() {
-    return gulp.src('src/mailer/**/*')
-        .pipe(gulp.dest('dist/mailer'));
-});
 
 gulp.task('images', function() {
     return gulp.src('src/img/**/*')
@@ -81,4 +67,4 @@ gulp.task('images', function() {
         .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles','html', 'scripts', 'font', 'icons', 'mailer','images',));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles','html', 'scripts', 'font', 'icons','images',));

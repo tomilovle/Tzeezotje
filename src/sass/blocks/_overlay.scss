@@ -1,0 +1,101 @@
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba($color: #000000, $alpha: 0.56);
+    z-index: 2  ;
+}
+
+.feed-form input {
+    height: 50px;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 56px;
+    padding: 0 20px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #4b4b4b;
+}
+.feed-form {
+    .button-submit {
+        height: 50px;
+        background: #3A4574;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 56px;
+        transition: 0.2s all;
+        &:hover {
+            color: #3A4574;
+            background: #FFFFFF;
+            transform: scale(0.9);
+            border: none;
+        }
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal {
+    border-radius: 56px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    min-height: auto;
+    background: #F2F2F2;
+    padding: 40px;
+    &__close {
+        position: absolute;
+        top:0;
+        right: -80px;
+        width: 48px;
+        height: 48px; 
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #FFFFFF;
+        border-radius: 50%;
+        color: #FFFFFF;
+        margin: 0 12px;
+        text-align: center;
+        transition: 0.2s all;
+        cursor: pointer;
+        &:hover {
+            color: #3A4574;
+            background: #FFFFFF;
+            text-decoration: none;
+            transform: rotateZ(180deg) scale(1.2);
+        }
+    }
+    &__subtitle {
+        font-weight: 600;
+        font-size: 18px;
+        text-align: center;
+        color: #0D0D0D;
+        margin-bottom: 40px;
+    }
+    .error {
+        border: 2px solid rgb(252, 137, 137);
+    }
+    label.error {
+        border:none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+#thanks, #reserve {
+    display: none;
+}

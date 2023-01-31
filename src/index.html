@@ -4,36 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/style.min.css">
     <title>test</title>
 </head>
 <body>
     <section class="promo">
-        <div class="container">
-
-            <header class="header">
-                <a href="#" class="header__logo">
-                    <img src="icons/logo.png" alt="logo">
-                </a>
-                <div class="header__menu">
-                    <ul class="header__list">
+        <nav>
+            <div class="container">
+                <header class="header">
+                    <a href="#" class="header__logo">
+                        <img src="icons/logo.png" alt="logo">
+                    </a>
+                    <ul class="header__menu">
                         <li class="header__menu-item"><a class="header__menu-link" href="#">À la carte</a></li>
                         <li class="header__menu-item"><a class="header__menu-link" href="#">Wijnkaart</a></li>
                         <li class="header__menu-item"><a class="header__menu-link" href="#">Lunchmenu</a></li>
                         <li class="header__menu-item"><a class="header__menu-link" href="#">Contact</a></li>
                     </ul>
-                </div>
-                <div class="header__contacts">
-                    <img src="icons/phone_icon.svg" alt="phone_icon">
-                    <a href="tel:+3292825725" class="header__phone">+32 9 282 57 25</a>
-                </div>
-            </header>
-
+                    <div class="header__contacts">
+                        <img src="icons/phone_icon.svg" alt="phone_icon">
+                        <a href="tel:+3292825725" class="header__phone">+32 9 282 57 25</a>
+                    </div>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </header>
+            </div>
+        </nav>
+        <div class="container">
             <div class="promo__wrapper">
                 <h2 class="promo__subheader">OPEN EVERYDAY 6AM - 9PM</h2>
                 <h1 class="promo__header">A bad day with lunch is better than a good day without it.</h1>
                 <div class="promo__interaction">
-                    <button class="button">Reserve a table</button>
+                    <button data-modal="reserve" class="button">Reserve a table</button>
                     <div class="promo__link">
                         <a href="#" class="promo__link-item">Fb</a>
                         <a href="#" class="promo__link-item">lg</a>
@@ -42,8 +48,7 @@
                     </div>
                 </div>
             </div>
-
-        </div>
+        </div> 
     </section>
 
     <section class="timetable">
@@ -104,15 +109,45 @@
 
     <div class="carousel">
         <div class="container">
-         <div class="carousel__inner">
-             <div><img src="img/slide/slide1.png" alt=""></div>
-             <div><img src="img/slide/slide2.png" alt=""></div>
-             <div><img src="img/slide/slide3.png" alt=""></div>
-         </div>
-         <button type="button" class="prev"><img src="icons/left.svg" alt="prev"></button>
-         <button type="button" class="next"><img src="icons/right.svg" alt="next"></button>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="icons/“.svg" alt="caraousel__img" class="caraousel__img">
+                        <h1 class="carousel__title">Goede service, lekker eten, toffe ambiance</h1>
+                        <div class="carousel__descr">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo  dolores et ea rebum. Stet clita kasd gubergren.</div>
+                        <h2 class="carousel__subtitle">ALAIN HEYNDRICKX</h2>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>  
         </div>
-     </div>
-     
-</body>
+    </div>
+
+    <div class="overlay">
+
+        <div class="modal" id="reserve">
+            <div class="modal__close">&times;</div>
+            <div class="modal__subtitle">Table reservation form</div>
+            <form class="feed-form" action="#">
+                <input name="name" required placeholder="Your name" type="text">
+                <input name="phone" required placeholder="Phone">
+                <input name="email" required placeholder="E-mail" type="email">
+                <button name="btn" class="button-submit" type="submit">reserve</button>
+            </form>
+        </div>
+
+        <div class="modal" id="thanks">
+            <div class="modal__close">&times;</div>
+            <div class="modal__subtitle">Thanks!</div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+     <script src="js/script.js"></script>
+    </body>
 </html>
